@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  chrome:
+    build: .
+    container_name: chrome_vps
+    env_file:
+      - .env                # File environment untuk password
+      - ./config/app_config.env  # Config tambahan untuk Chrome
+    expose:
+      - "5800"  # Hanya expose ke internal network Docker
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx_proxy
+    ports:
+      - "443:443"
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/certs:/etc/nginx/certs
+    depends_on:
+      - chrome
+    restart: unless-stopped
