@@ -1,2 +1,9 @@
-# config
+# Mengabaikan file konfigurasi yang berisi credential
 .env
+
+# Mengabaikan seluruh folder konfigurasi dalam /root/chrome-vps/config
+config/
+
+# Opsional: Mengabaikan file log atau data sementara
+*.log
+*.tmp

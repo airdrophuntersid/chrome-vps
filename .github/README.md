@@ -1,17 +1,16 @@
-## Chrome VPS
-> Recommended Using Ubuntu
+## Chrome VPS (Chromium)
+> Recommended Using Ubuntu/Debian (Linux)
+> shm size: 1gb
 
 ### Update & Upgrade Package
     sudo apt update && sudo apt upgrade -y
 
 ### Install Requirements
-    sudo apt-get install -y wget curl gnupg ca-certificates supervisor lsb-release
+    sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
 
 ### Enable Port & Setup Firewall
-    sudo ufw allow 5800
-    sudo ufw allow 80
-    sudo ufw allow 443
-    sudo ufw reload
+    sudo ufw allow 3010
+    sudo ufw allow 3000
 
 ### Setup Your Config
   * File rename.env to .env
@@ -23,9 +22,8 @@ Change the rename.env file to .env and fill in your username & password for late
 ### Running
     docker-compose up --build -d
 
-
 ### Access using VPS IP
-    https://VPS_IP
+    https://VPS_IP:3010 or https://VPS_IP:3011
 
   <kbd>
 Login: Username dan password which was previously set in the .env file
