@@ -1,6 +1,5 @@
 ## Chrome VPS (Chromium)
 > Recommended Using Ubuntu/Debian (Linux)
-> shm size: 1gb
 
 ### Update & Upgrade Package
     sudo apt update && sudo apt upgrade -y
@@ -23,7 +22,7 @@ Change the rename.env file to .env and fill in your username & password for late
 ### Running
     docker-compose up --build -d
 
-### Access using VPS IP
+### Access using IP VPS
     https://IP_VPS:3010 or https://IP_VPS:3011
 
   <kbd>
