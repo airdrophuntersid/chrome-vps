@@ -28,3 +28,6 @@ Change the rename.env file to .env and fill in your username & password for late
   <kbd>
 Login: Username dan password which was previously set in the .env file
   </kbd>
+
+### Stop Chromium
+    docker stop chromium
