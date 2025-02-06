@@ -6,11 +6,12 @@
     sudo apt update && sudo apt upgrade -y
 
 ### Install Requirements
-    sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+    sudo apt install -y apt-transport-https ca-certificates curl software-properties-common gnupg
 
 ### Enable Port & Setup Firewall
+    sudo ufw enable
     sudo ufw allow 3010
-    sudo ufw allow 3000
+    sudo ufw allow 3011
 
 ### Setup Your Config
   * File rename.env to .env
@@ -23,7 +24,7 @@ Change the rename.env file to .env and fill in your username & password for late
     docker-compose up --build -d
 
 ### Access using VPS IP
-    https://VPS_IP:3010 or https://VPS_IP:3011
+    https://IP_VPS:3010 or https://IP_VPS:3011
 
   <kbd>
 Login: Username dan password which was previously set in the .env file
